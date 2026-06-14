@@ -5,12 +5,15 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  
-  --color-ink: #0B0B0F;
-  --color-warm-beige: #FAF8F4;
-  --color-gold-accent: #E0A82E;
-  --color-border-subtle: rgba(11, 11, 15, 0.08);
-  --color-border-light: rgba(250, 248, 244, 0.12);
+
+  /* Blue palette (sourced from amconsultingai reference sites) */
+  --color-ink: #0B1E3A;          /* deep navy — primary text */
+  --color-warm-beige: #FBFDFF;   /* light blue-white — page base */
+  --color-accent: #2F63FF;       /* vivid blue — primary accent */
+  --color-sky: #38BDF8;          /* sky/cyan — secondary accent */
+  --color-deep: #060913;         /* near-black navy — inverted sections */
+  --color-border-subtle: rgba(11, 30, 58, 0.08);
+  --color-border-light: rgba(251, 253, 255, 0.12);
 }
 
 @layer base {
@@ -22,32 +25,45 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  /* Retain styling and handle standard dark nodes or custom inversions beautifully */
+
   body {
     overflow-x: hidden;
   }
 }
 
-/* Custom noise/gradient texture for cinematic background */
+/* Cinematic background textures — blue-tinted */
 .cinematic-bg-light {
-  background-color: #FAF8F4;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(224, 168, 46, 0.03) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(11, 11, 15, 0.01) 0px, transparent 50%);
+  background-color: #FBFDFF;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(47, 99, 255, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.04) 0px, transparent 50%);
 }
 
 .cinematic-bg-dark {
-  background-color: #0B0B0F;
-  background-image: 
-    radial-gradient(at 50% 0%, rgba(224, 168, 46, 0.1) 0px, transparent 60%),
+  background-color: #060913;
+  background-image:
+    radial-gradient(at 50% 0%, rgba(47, 99, 255, 0.22) 0px, transparent 60%),
     radial-gradient(at 100% 100%, rgba(0, 0, 0, 0.8) 0px, transparent 50%);
 }
 
 .climb-line {
-  background: linear-gradient(135deg, rgba(11, 11, 15, 0.02) 0%, rgba(11, 11, 15, 0.08) 50%, rgba(224, 168, 46, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(11, 30, 58, 0.02) 0%, rgba(11, 30, 58, 0.08) 50%, rgba(47, 99, 255, 0.18) 100%);
 }
 
 .climb-line-dark {
-  background: linear-gradient(135deg, rgba(250, 248, 244, 0.02) 0%, rgba(250, 248, 244, 0.06) 50%, rgba(224, 168, 46, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(251, 253, 255, 0.02) 0%, rgba(251, 253, 255, 0.06) 50%, rgba(47, 99, 255, 0.35) 100%);
+}
+
+/* Downward-traveling beam for the stages table left rail (Stage 1 → Stage 6) */
+@keyframes beam-down {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateY(440%); opacity: 0; }
+}
+.beam-down {
+  animation: beam-down 2.6s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .beam-down { animation: none; }
 }

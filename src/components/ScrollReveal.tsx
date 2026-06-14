@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, FC } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 interface ScrollRevealProps {
@@ -8,7 +8,7 @@ interface ScrollRevealProps {
   className?: string;
 }
 
-export default function ScrollReveal({ children, delay = 0, id, className = "" }: ScrollRevealProps) {
+const ScrollReveal: FC<ScrollRevealProps> = ({ children, delay = 0, id, className = "" }) => {
   const shouldReduceMotion = useReducedMotion();
 
   // If system requests reduced motion, deliver layout statically with no transform or fade delay
@@ -36,4 +36,6 @@ export default function ScrollReveal({ children, delay = 0, id, className = "" }
       {children}
     </motion.div>
   );
-}
+};
+
+export default ScrollReveal;
