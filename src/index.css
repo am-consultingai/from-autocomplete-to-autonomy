@@ -19,6 +19,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* clear the fixed banner when jumping to anchors */
     background-color: var(--color-warm-beige);
     color: var(--color-ink);
     font-family: var(--font-sans);

@@ -22,6 +22,28 @@ export default function Banner() {
           />
         </a>
 
+        {/* In-page navigation */}
+        <nav className="hidden md:flex items-center gap-1">
+          <a
+            href="#abstract"
+            className="px-3 py-2 rounded-lg text-[11px] font-mono font-semibold uppercase tracking-widest text-gray-500 hover:text-[var(--color-accent)] hover:bg-blue-50 transition-all"
+          >
+            Abstract
+          </a>
+          <a
+            href="#climb"
+            className="px-3 py-2 rounded-lg text-[11px] font-mono font-semibold uppercase tracking-widest text-gray-500 hover:text-[var(--color-accent)] hover:bg-blue-50 transition-all"
+          >
+            The 6 Stages
+          </a>
+          <a
+            href="#takeaways"
+            className="px-3 py-2 rounded-lg text-[11px] font-mono font-semibold uppercase tracking-widest text-gray-500 hover:text-[var(--color-accent)] hover:bg-blue-50 transition-all"
+          >
+            Take Action
+          </a>
+        </nav>
+
         {/* Host badge */}
         <div className="flex items-center gap-2.5 shrink-0">
           <span className="hidden sm:inline font-mono text-[10px] uppercase tracking-widest text-gray-400">
