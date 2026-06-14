@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-ink: #0B0B0F;
+  --color-warm-beige: #FAF8F4;
+  --color-gold-accent: #E0A82E;
+  --color-border-subtle: rgba(11, 11, 15, 0.08);
+  --color-border-light: rgba(250, 248, 244, 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-warm-beige);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Retain styling and handle standard dark nodes or custom inversions beautifully */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom noise/gradient texture for cinematic background */
+.cinematic-bg-light {
+  background-color: #FAF8F4;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(224, 168, 46, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(11, 11, 15, 0.01) 0px, transparent 50%);
+}
+
+.cinematic-bg-dark {
+  background-color: #0B0B0F;
+  background-image: 
+    radial-gradient(at 50% 0%, rgba(224, 168, 46, 0.1) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(0, 0, 0, 0.8) 0px, transparent 50%);
+}
+
+.climb-line {
+  background: linear-gradient(135deg, rgba(11, 11, 15, 0.02) 0%, rgba(11, 11, 15, 0.08) 50%, rgba(224, 168, 46, 0.15) 100%);
+}
+
+.climb-line-dark {
+  background: linear-gradient(135deg, rgba(250, 248, 244, 0.02) 0%, rgba(250, 248, 244, 0.06) 50%, rgba(224, 168, 46, 0.3) 100%);
+}

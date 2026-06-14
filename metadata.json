@@ -1,0 +1,6 @@
+{
+  "name": "From Autocomplete to Autonomy",
+  "description": "A single-scroll premium landing page promoting an invited talk about the levels of AI adoption.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
